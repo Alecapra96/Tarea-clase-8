@@ -1,16 +1,16 @@
 function probarCartaPapaNoel() {
-    console.assert(validarNombre('') === 'este campo debe tener al menos 1 caracter',
+    console.assert(validarNombre('') === 'El campo nombre debe tener al menos 1 caracter',
         'Validar nombre no validó que el nombre no sea vacío',
     );
     console.assert(
         validarNombre(
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') ===
-            "este campo debe ser menor a 50 caracteres",
+            "El campo nombre debe ser menor a 50 caracteres",
         'Validar nombre no validó que el nombre sea menor a 50 caracteres',
     );
     console.assert(
         validarCiudad('') ===
-        'debes seleccionar algo',
+        'Debes seleccionar una ciudad',
         'ValidarCiudad no validó que el nombre no sea vacío',
     );
     console.assert(
@@ -19,13 +19,17 @@ function probarCartaPapaNoel() {
         'ValidarComportamiento no validó que al menos un iten este seleccionado',
     );
     console.assert(
-        validarDescripcionRegalo('') === "el campo solo puede tener letras y numeros",
-        'ValidarDescripcionRegalo no validó que la descripcion no sea vacíoo tenga otra cosa que no sea letra y numero',
+        validarDescripcionRegalo('') === "Debes escribir una descripcion del regalo",
+        'ValidarDescripcionRegalo no validó que la descripcion no sea vacío tenga otra cosa que no sea letra y numero',
+    );
+    console.assert(
+        validarDescripcionRegalo('------') === "La descripcion del regalo solo puede tener letras y numeros",
+        'ValidarDescripcionRegalo no validó que la descripcion no sea vacío tenga otra cosa que no sea letra y numero',
     );
     console.assert(
         validarDescripcionRegalo(
             'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa') ===
-            "este campo debe ser menor a 150 caracteres",
+            "La descripcion del regalo debe ser menor a 150 caracteres",
         'ValidarDescripcionRegalo no validó que la descripcion sea menor a 150 caracteres',
     );
     

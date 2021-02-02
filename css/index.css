@@ -65,6 +65,11 @@ textarea {
     background: inherit;
     border: 2px solid black;
 }
+.error-nombre-ciudad-descripcion{
+    
+    color: red;
+}
+
 
 input {
     border: none;
