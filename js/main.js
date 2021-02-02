@@ -56,11 +56,12 @@ function validarForm(event){
         'descripcion-regalo': ErrorDescripcionRegalo
     };
  
-// si la funcion handleErrors retorna el valor 0(que es el contador de erorres) hace lo que esta dentro del if 
     if (handleErrors(errors) === 0 ){
         let $exito = document.getElementById("exito");
         $exito.className="";
         $formulario.className="oculto";
+        setTimeout(recargarPagina,5000);
+
     }
     event.preventDefault();
 
@@ -68,11 +69,7 @@ function validarForm(event){
 function handleErrors(errors){
 
     const keys = Object.keys(errors);
-
-//   Esto solo va a funcionar si [key] ,que es lo que esta dentro del objeto "errors"
-//   tiene el mismo nombre que el name del atributo que quiero marcar como error
     let contador = 0;
-    
     keys.forEach(function(key){
         let error = errors[key];
         if (error){
@@ -91,14 +88,19 @@ function handleErrors(errors){
         }
         else{
             let nombre = ".resultados-"+key
+            let $textoErrores=document.getElementById("error-"+key);
             $formulario[key].className="";
             let $borrarError = document.querySelectorAll(nombre);
             $borrarError.forEach( function($borrarError){
-                $borrarError.className = 'oculto'
+                $textoErrores.removeChild($borrarError);
             })
             
         }
         
     });
+    console.log(contador);
     return contador;
+}
+function recargarPagina(){
+    window.location.reload();
 }
