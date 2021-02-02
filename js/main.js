@@ -46,14 +46,13 @@ function validarDescripcionRegalo(descripcionRegalo){
 }
 
 function validarForm(event){
-
     const errorNombre = validarNombre($formulario.nombre.value);
     const errorCiudad= validarCiudad($formulario.ciudad.value);
     const ErrorDescripcionRegalo= validarDescripcionRegalo($formulario["descripcion-regalo"].value);
 
     const errors = {
         nombre: errorNombre,
-        ciudad: errorCiudad,
+        ciudad: errorCiudad,    
         'descripcion-regalo': ErrorDescripcionRegalo
     };
  
@@ -82,12 +81,12 @@ function handleErrors(errors){
             $formulario[key].className="error";
             let nombreClase = "resultados-"+key
             if ( !document.getElementById(nombreClase)) {
-            const $error = document.createElement("li");
-            let nombre1 = "resultados-"+key
-            $error.id=nombre1;
-            $error.className=nombre1;
-            $error.innerText = error;
-            $textoErrores.appendChild($error);
+                const $error = document.createElement("li");
+                let nombre1 = "resultados-"+key
+                $error.id=nombre1;
+                $error.className=nombre1;
+                $error.innerText = error;
+                $textoErrores.appendChild($error);
             }
         }
         else{
@@ -101,6 +100,5 @@ function handleErrors(errors){
         }
         
     });
-    console.log(contador);
     return contador;
 }
